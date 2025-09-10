@@ -19,7 +19,7 @@ class HomePage:
     successful_compare_message=(By.XPATH,"//div[@class='bar-notification success']/p")
     build_your_computer_heading=(By.XPATH,"//h1[text()='Build your own computer']")
     apple_macbook_pro_heading=(By.XPATH,"//h1[text()='Apple MacBook Pro']")
-    successful_added_to_cart=(By.XPATH,"//div[@class='bar-notification']")
+    successful_added_to_cart=(By.XPATH,"//div[@id='bar-notification']")
     virtual_gift_card_heading=(By.XPATH,"//h1[text()='$25 Virtual Gift Card']")
     build_your_computer_cart_button=(By.XPATH,"//div[@data-productid='1']//button[text()='Add to cart']")
     apple_macbook_pro_cart_button=(By.XPATH,"//div[@data-productid='4']//button[text()='Add to cart']")
@@ -267,7 +267,7 @@ class HomePage:
             self.electronics_title_click()
         elif click_type.lower() == "image":
             self.electronics_image_click()
-        self.electronics_apparel_digital_header()
+        return self.electronics_apparel_digital_header()
 
     def apparel_title_click(self):
         self.driver.find_element(*self.apparel_title).click()
@@ -281,7 +281,7 @@ class HomePage:
             self.apparel_title_click()
         elif click_type.lower() == "image":
             self.apparel_image_click()
-        self.electronics_apparel_digital_header()
+        return self.electronics_apparel_digital_header()
 
     def digital_downloads_title_click(self):
         self.driver.find_element(*self.digital_downloads_title).click()
@@ -295,4 +295,4 @@ class HomePage:
             self.digital_downloads_title_click()
         elif click_type.lower() == "image":
             self.digital_downloads_image_click()
-        self.electronics_apparel_digital_header()
+        return self.electronics_apparel_digital_header()
